@@ -1,0 +1,13 @@
+Save, share & discover links !</h1>
+
+<p><a href="{% url shorturls_create %}">Just want to shorten a link?</a></p>
+
+<p>Discover URLs by access time :</p>
+<ul>
+    {% for short_url in short_urls %}
+    <li> {{ short_url.url }} via <a href="http://{{ request.get_host }}{% url shorturls_view short_url.code %}">{{ request.get_host }}{% url shorturls_view short_url.code %}</a>
+    ({{ short_url.acces_counter }} access)</li>
+    {% empty %}
+    <li>Il n'y en a pas actuellement.</li>
+    {% endfor %}
+</ul>
