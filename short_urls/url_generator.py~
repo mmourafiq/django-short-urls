@@ -25,37 +25,37 @@ class URLEncoder(object):
         self.mapping.reverse()
         
     def encode_url(self, n, min_length=MIN_LENGTH):
-        return self.__enbase(self.__encode(n), min_length)
+        return self._enbase(self._encode(n), min_length)
     
     def decode_url(self, n):
-        return self.__decode(self.__debase(n))
+        return self._decode(self._debase(n))
     
-    def __encode(self, n):
+    def _encode(self, n):
         result = 0
         for i, b in enumerate(self.mapping):
             if (n & self.mask) & (1 << i):
                 result |= (1 << b)
         return (n & ~self.mask) | result
     
-    def __decode(self, n):
+    def _decode(self, n):
         result = 0
         for i, b in enumerate(self.mapping):
             if (n & self.mask) & (1 << b):                
                 result |= (1 << i)
         return (n & ~self.mask) | result    
     
-    def __enbase(self, x, min_length=MIN_LENGTH):
-        result = self.__enbase_iter(x)
+    def _enbase(self, x, min_length=MIN_LENGTH):
+        result = self._enbase_iter(x)
         padding = self.alphabet[0] * (min_length - len(result))
         return '%s%s' % (padding, result)
     
-    def __enbase_iter(self, x):
+    def _enbase_iter(self, x):
         n = len(self.alphabet)
         if x < n:
             return self.alphabet[x]
-        return self.__enbase_iter(x / n) + self.alphabet[x % n]
+        return self._enbase_iter(x / n) + self.alphabet[x % n]
     
-    def __debase(self, x):
+    def _debase(self, x):
         n = len(self.alphabet)
         result = 0
         for i, c in enumerate(reversed(x)):
