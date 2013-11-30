@@ -1,13 +1,4 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Jun 10, 2012
-
-@author: Mourad Mourafiq
-
-@copyright: Copyright © 2012
-
-other contributers:
-'''
 from django.contrib import admin
 from models import ShortURL
 

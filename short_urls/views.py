@@ -1,14 +1,4 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Jun 10, 2012
-
-@author: Mourad Mourafiq
-
-@copyright: Copyright © 2012
-
-other contributers:
-'''
-
 from django.shortcuts import render_to_response,get_object_or_404, redirect
 from django.template import RequestContext
 from django.http import HttpResponseRedirect

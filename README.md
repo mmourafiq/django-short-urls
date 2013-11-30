@@ -23,3 +23,5 @@ includes:
  * submission of urls
  * listing, plus number of access 
  * redirection to the original url
+
+There's also this small blog post about bitwise operations with python : http://blog.mourafiq.com/post/47457980491/bitwise-operations-with-python

@@ -1,13 +1,4 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Jun 10, 2012
-
-@author: Mourad Mourafiq
-
-@copyright: Copyright © 2012
-
-other contributers:
-'''
 DEFAULT_ALPHABET = 'az7er5tyu1io0pq4sd9fg6hjk8lmw3xcv2bn'
 LEGTH_GENERATION = 32
 MIN_LENGTH = 6
